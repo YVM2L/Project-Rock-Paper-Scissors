@@ -35,8 +35,11 @@ function playGame() {
   const computerChoice = getComputerChoice();
   const result = playRound(humanChoice, computerChoice);
 
-  console.log("You chose:", humanChoice);
-  console.log("Computer chose:", computerChoice);
-  console.log(result);
+  console.log("You chose:", humanChoice); 
+  console.log("Computer chose:", computerChoice); 
+  // console.log(result); //
+
+  document.getElementById("result").textContent = result;
+
 }
 
