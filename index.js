@@ -11,4 +11,13 @@ function getHumanChoice() {
   return userInput.toLowerCase();
 }
 
-console.log(getHumanChoice());
+// console.log(getHumanChoice()); //
+
+function playGame() {
+  const humanChoice = getHumanChoice();
+  const computerChoice = getComputerChoice();
+
+  console.log("You chose:", humanChoice);
+  console.log("Computer chose:", computerChoice);
+}
+
