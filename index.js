@@ -4,14 +4,14 @@ function getComputerChoice() {
   return choices[randomIndex];
 }
 
-// console.log(getComputerChoice()); 
+// console.log(getComputerChoice());
 
 function getHumanChoice() {
   const userInput = prompt("Choose: rock, paper or scissors");
   return userInput.toLowerCase();
 }
 
-// console.log(getHumanChoice()); 
+// console.log(getHumanChoice());
 
 function playRound(player, computer) {
   if (player === computer) {
@@ -47,11 +47,21 @@ function playGame() {
     document.getElementById(
       "current-score"
     ).textContent = `Final Score - Player: ${playerScore}, Computer : ${computerScore}`;
+    if (playerScore > computerScore) {
+      document.getElementById("winner-message").textContent =
+        "You won the Game!";
+    } else if (playerScore < computerScore) {
+      document.getElementById("winner-message").textContent =
+        "Computer won the Game!";
+    } else {
+      document.getElementById("winner-message").textContent =
+        "It's an overall tie!";
+    }
 
     console.log("You chose:", humanChoice);
     console.log("Computer chose:", computerChoice);
     console.log(`Round ${i}: ${result}`);
-    // console.log(result); 
+    // console.log(result);
   }
 
   console.log(
