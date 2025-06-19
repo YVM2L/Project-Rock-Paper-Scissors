@@ -4,14 +4,14 @@ function getComputerChoice() {
   return choices[randomIndex];
 }
 
-// console.log(getComputerChoice()); //
+// console.log(getComputerChoice()); 
 
 function getHumanChoice() {
   const userInput = prompt("Choose: rock, paper or scissors");
   return userInput.toLowerCase();
 }
 
-// console.log(getHumanChoice()); //
+// console.log(getHumanChoice()); 
 
 function playRound(player, computer) {
   if (player === computer) {
@@ -29,17 +29,40 @@ function playRound(player, computer) {
   return "You lose!";
 }
 
-
 function playGame() {
-  const humanChoice = getHumanChoice();
-  const computerChoice = getComputerChoice();
-  const result = playRound(humanChoice, computerChoice);
+  let playerScore = 0;
+  let computerScore = 0;
 
-  console.log("You chose:", humanChoice); 
-  console.log("Computer chose:", computerChoice); 
-  // console.log(result); //
+  for (let i = 1; i <= 5; i++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    const result = playRound(humanChoice, computerChoice);
 
-  document.getElementById("result").textContent = result;
+    if (result === "You win!") {
+      playerScore++;
+    } else if (result === "You lose!") {
+      computerScore++;
+    }
 
+    document.getElementById(
+      "current-score"
+    ).textContent = `Final Score - Player: ${playerScore}, Computer : ${computerScore}`;
+
+    console.log("You chose:", humanChoice);
+    console.log("Computer chose:", computerChoice);
+    console.log(`Round ${i}: ${result}`);
+    // console.log(result); 
+  }
+
+  console.log(
+    `Final Score - Player: ${playerScore}, Computer : ${computerScore}`
+  );
+
+  if (playerScore > computerScore) {
+    console.log("You won the game!");
+  } else if (playerScore < computerScore) {
+    console.log("Computer won the game!");
+  } else {
+    console.log("It's an overall tie!");
+  }
 }
-
