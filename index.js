@@ -67,6 +67,7 @@ function playRound(playerChoice) {
   round++; //следующий раунд
 }
 
+//подключаем кнопки для срабатывания
 document.querySelectorAll(".choice-btn").forEach(button => {
   button.addEventListener("click", () => {
     const choice = button.getAttribute("data-choice");
