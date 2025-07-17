@@ -47,4 +47,7 @@ function playRound(playerChoice) {
   //отображение раунда, мой выбор, выбор бота, и результат
   resultMessage.textContent = `Round ${round}: You chose ${playerChoiсe}, computer chose ${computerChoice}. Result: ${outcome}`;
 
+  //обновляю dom счёт
+  playerScoreDisplay.textContent = playerScore;
+  computerScoreDisplay.textContent = computerScore
 }
