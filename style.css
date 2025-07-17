@@ -16,3 +16,14 @@ h1 {
     padding: 10px 20px;
     border-radius: 10px;
 }
+#choices {
+    margin-top: 25px;
+}
+.choice-btn {
+    font-size: medium;
+    padding: 12px 14px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    color: blueviolet;
+}
