@@ -17,4 +17,19 @@ function getComputerChoice() {
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex]; // число от 0 до 1, умножили, округлили и сопоставили
 }
-console.log(getComputerChoice()); //проверяем что выбирает бот
+//console.log(getComputerChoice()); //проверяем что выбирает бот
+
+function determineWinner(player, computer) {
+  if (player === computer) return "Tie";
+
+  if (
+    (player === "rock" && computer === "scissors") ||
+    (player === "scissors" && computer === "paper") ||
+    (player === "paper" && computer === "rock")
+  ) {
+    return "Win";
+  }
+  return "Lose";
+}
+
+console.log(determineWinner("rock", "scissors")); //проверка
