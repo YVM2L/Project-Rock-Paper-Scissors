@@ -32,4 +32,19 @@ function determineWinner(player, computer) {
   return "Lose";
 }
 
-console.log(determineWinner("rock", "scissors")); //проверка
+//console.log(determineWinner("rock", "scissors")); //проверка
+
+function playRound(playerChoice) {
+  if (round > 5) return //играем не больше 5
+
+  const computerChoise = getComputerChoice(); //ход бота
+  const outcome = determineWinner(playerChoice, computerChoice); //победитель
+
+  //обновление резульатта
+  if (outcome === "Win") playerScore++;
+  else if (outcome === "Lose") computerScore++;
+
+  //отображение раунда, мой выбор, выбор бота, и результат
+  resultMessage.textContent = `Round ${round}: You chose ${playerChoiсe}, computer chose ${computerChoice}. Result: ${outcome}`;
+
+}
