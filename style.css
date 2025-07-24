@@ -18,6 +18,9 @@ h1 {
 }
 #choices {
     margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 .choice-btn {
     font-size: medium;
@@ -26,4 +29,8 @@ h1 {
     border: none;
     border-radius: 12px;
     color: blueviolet;
+}
+body {
+    background-color: antiquewhite;
+    font-family: sans-serif;
 }
