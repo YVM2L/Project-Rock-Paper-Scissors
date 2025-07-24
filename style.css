@@ -26,11 +26,14 @@ h1 {
     font-size: medium;
     padding: 12px 14px;
     margin: 10px;
-    border: none;
+    border: solid;
     border-radius: 12px;
     color: blueviolet;
 }
 body {
     background-color: antiquewhite;
     font-family: sans-serif;
+}
+.choice-btn:active {
+    background-color: rgb(171, 115, 224);
 }
