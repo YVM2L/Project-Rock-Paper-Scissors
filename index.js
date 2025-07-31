@@ -8,7 +8,7 @@ const winnerMessage = document.getElementById("winner-message");
 const playerScoreDisplay = document.getElementById("player-score");
 const computerScoreDisplay = document.getElementById("computer-score");
 
-//console.log("Round:", round); 
+//console.log("Round:", round);
 //console.log("playerScore DOM", playerScoreDisplay);
 //playerScoreDisplay.textContent = "99" //смена текста
 
@@ -35,8 +35,8 @@ function determineWinner(player, computer) {
 //console.log(determineWinner("rock", "scissors")); //проверка
 
 function playRound(playerChoice) {
-  if (round > 5) return //играем не больше 5
-//твою мать гребаная буква С, БУДЬ ВНИМАТЕЛЬНЕЕ СЛЕДИ ЗА РАСКЛАДКОЙ!!!!!!!
+  if (round > 5) return; //играем не больше 5
+  //твою мать гребаная буква С, БУДЬ ВНИМАТЕЛЬНЕЕ СЛЕДИ ЗА РАСКЛАДКОЙ!!!!!!!
   const computerChoice = getComputerChoice(); //ход бота
   const outcome = determineWinner(playerChoice, computerChoice); //победитель
 
@@ -49,17 +49,15 @@ function playRound(playerChoice) {
 
   //обновляю dom счёт
   playerScoreDisplay.textContent = playerScore;
-  computerScoreDisplay.textContent = computerScore
+  computerScoreDisplay.textContent = computerScore;
 
   //проверка на финал
   if (round === 5) {
     if (playerScore > computerScore) {
       winnerMessage.textContent = "You win!";
-    } 
-    else if (computerScore > playerScore) {
+    } else if (computerScore > playerScore) {
       winnerMessage.textContent = "You lose!";
-    }
-    else {
+    } else {
       winnerMessage.textContent = "It's a Tie!";
     }
   }
@@ -68,7 +66,7 @@ function playRound(playerChoice) {
 }
 
 //подключаем кнопки для срабатывания
-document.querySelectorAll(".choice-btn").forEach(button => {
+document.querySelectorAll(".choice-btn").forEach((button) => {
   button.addEventListener("click", () => {
     const choice = button.getAttribute("data-choice");
     playRound(choice);
